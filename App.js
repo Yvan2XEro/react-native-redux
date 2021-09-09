@@ -9,8 +9,8 @@ export default function App() {
       <View style={styles.todosWrapper}>
         <Text style={styles.title}>Todos list</Text>
         <View>
-          <Todo title={'Todo 1'} />
-          <Todo title={'Todo 2'} />
+          <Todo title={'Todo 1'} key={1} />
+          <Todo title={'Todo 2'} key={2} />
         </View>
       </View>
       <StatusBar style="auto" />

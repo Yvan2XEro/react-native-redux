@@ -5,7 +5,7 @@ export const Todo = ({title, completed, onToggle})=>{
     return (
         <View style={styles.todoItem}>
             <View style={styles.todoItem}>
-                <TouchableOpacity style={styles.square}></TouchableOpacity>
+                <View style={styles.square}></View>
                 <Text>{{ title }}</Text>
             </View>
             <View style={styles.circular}></View>
