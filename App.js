@@ -1,34 +1,24 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import { Todo } from './components/Todo';
+import React from "react";
+import { StyleSheet, View } from "react-native";
+import { Provider } from "react-redux";
+import TodoInput from "./components/TodoInput";
+import TodoListStore from "./components/TodoList";
+import store from "./store";
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <View style={styles.todosWrapper}>
-        <Text style={styles.title}>Todos list</Text>
-        <View>
-          <Todo title={'Todo 1'} key={1} />
-          <Todo title={'Todo 2'} key={2} />
-        </View>
+    <Provider store={store}>
+      <View style={styles.container}>
+        <TodoListStore />
+        <TodoInput />
       </View>
-      <StatusBar style="auto" />
-    </View>
+    </Provider>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#EBEAED',
+    backgroundColor: "#EBEAED",
   },
-  todosWrapper: {
-    padding: 80,
-    paddingHorizontal: 20,
-  },
-  title: {
-    fontSize: 24,
-    fontWeight: 'bold'
-  }
 });
