@@ -18,12 +18,12 @@ const Todo = ({ data }) => {
   const dispatch = useDispatch();
   return (
     <View style={styles.todoItem}>
-      <Text style={styles.text}>{title}</Text>
       <CheckBox
         onValueChange={() => dispatch(toggleTodoAction({ id }))}
         value={completed}
         style={styles.circular}
       />
+      <Text style={styles.text}>{title}</Text>
       <TouchableOpacity
         onPress={() => dispatch(deleteTodoAction({ id }))}
         style={styles.btnSquare}
@@ -46,11 +46,11 @@ const styles = StyleSheet.create({
     opacity: 15,
     flexDirection: "row",
     alignItems: "center",
-    justifyContent: "space-between",
     marginBottom: 20,
   },
   text: {
     maxWidth: 80,
+    marginLeft: 15,
   },
   btnSquare: {
     textAlign: "center",
@@ -58,6 +58,7 @@ const styles = StyleSheet.create({
     width: 24,
     height: 24,
     backgroundColor: "red",
+    marginLeft: "auto",
     opacity: 0.4,
     marginRight: 15,
     borderRadius: 5,
