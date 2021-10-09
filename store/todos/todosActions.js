@@ -9,7 +9,7 @@ export const addTodoAction = (title) => ({
   payload: { title },
 });
 
-export const deleteTodoAction = (id) => ({
+export const deleteTodoAction = ({ id }) => ({
   type: DELETE_TODO_ACTION,
   payload: id,
 });
